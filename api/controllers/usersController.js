@@ -32,3 +32,10 @@ function usersUpdate(req, res){
     });
   });
 }
+
+function usersDelete(req, res) {
+  User.findByIdAndRemove({_id: req.params.id}, function(err){
+    if(err) return res.status(404).json({ message: 'Something went wrong.'});
+    res.status(200).json({ message: 'User has been successfully deleted'});
+  });
+}
