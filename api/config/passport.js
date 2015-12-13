@@ -24,7 +24,7 @@ module.exports = function(passport) {
         if (err) return done(err, false, { message: "Something went wrong." });
 
         return done(null, user);
-      }) 
+      }); 
     });
   }));
 
