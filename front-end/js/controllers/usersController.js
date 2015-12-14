@@ -14,4 +14,24 @@ angular
     self.login         = login;
     self.logout        = logout;
     self.checkLoggedIn = checkLoggedIn;
+
+self.authenticate = function(provider) {
+  $auth.authenticate(provider);
+}
+
+function getUsers()
+User.query(function(data){
+  return self.all = data.users;
+});
+}
+
+function handleLogin(res) {
+  var token = res.token ? res.token : null;
+  if(token) {
+    self.getUsers();
+    $state.go('home');
   }
+//console.log(res)
+  self.user = TokenService.decodeToken();
+  CurrentUser.saveUser(self.user)
+}
