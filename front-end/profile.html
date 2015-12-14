@@ -1,0 +1,7 @@
+{{ us.user }}
+
+<div ng-show="us.checkLoggedIn()">
+<div><h3>Logging As:</h3>
+     <h2>{{ us.user.local.fullname || uppercase }}</h2>
+</div>
+</div>
