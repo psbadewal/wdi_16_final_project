@@ -35,3 +35,14 @@ function handleLogin(res) {
   self.user = TokenService.decodeToken();
   CurrentUser.saveUser(self.user)
 }
+
+function register() {
+  User.register(self.user, handleLogin);
+}
+
+function logout() {
+  TokenService.removeToken();
+  self.all = [];
+  self.user = {};
+  CurrentUser.clearUser();
+}
