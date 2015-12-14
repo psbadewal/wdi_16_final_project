@@ -1,28 +1,28 @@
 angular
-  .module('finalProject')
-  .controller('UsersController', UsersController);
+.module('finalProject')
+.controller('UsersController', UsersController);
 
-  UsersController.$inject = ['User', 'TokenService', '$state', 'CurrentUser', '$auth'];
+UsersController.$inject = ['User', 'TokenService', '$state', 'CurrentUser', '$auth'];
 
-  function UsersController(User, TokenService, $state, CurrentUser, $auth){
-    var self = this;
-    
-    self.all           = [];
-    self.user          = {};
-    self.getUsers      = getUsers;
-    self.register      = register;
-    self.login         = login;
-    self.logout        = logout;
-    self.checkLoggedIn = checkLoggedIn;
+function UsersController(User, TokenService, $state, CurrentUser, $auth){
+  var self = this;
 
-self.authenticate = function(provider) {
-  $auth.authenticate(provider);
-}
+  self.all           = [];
+  self.user          = {};
+  self.getUsers      = getUsers;
+  self.register      = register;
+  self.login         = login;
+  self.logout        = logout;
+  self.checkLoggedIn = checkLoggedIn;
 
-function getUsers()
-User.query(function(data){
-  return self.all = data.users;
-});
+  self.authenticate = function(provider) {
+    $auth.authenticate(provider);
+  }
+
+  function getUsers() {
+  User.query(function(data){
+    return self.all = data.users;
+  });
 }
 
 function handleLogin(res) {
@@ -32,8 +32,8 @@ function handleLogin(res) {
     $state.go('home');
   }
 //console.log(res)
-  self.user = TokenService.decodeToken();
-  CurrentUser.saveUser(self.user)
+self.user = TokenService.decodeToken();
+CurrentUser.saveUser(self.user)
 }
 
 function register() {
@@ -45,4 +45,17 @@ function logout() {
   self.all = [];
   self.user = {};
   CurrentUser.clearUser();
+}
+
+function checkLoggedIn() {
+  var loggedIn = !!TokenService.getToken();
+  return loggedIn;
+}
+
+if (CurrentUser.getUser()) {
+  self.getUsers();
+  //console.log(self.user);
+}
+
+return self
 }
