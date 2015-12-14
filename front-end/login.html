@@ -1,0 +1,8 @@
+<section id="login" ng-hide="us.checkLoggedIn()">
+
+<form name="us.loginForm" ng-submit="us.login()" novalidate>
+<legend>Login</legend>
+
+<label for="email">Email</label>
+<input type="text" name="email" placeholder="Enter your email" ng-model="us.user.email" required>
+
