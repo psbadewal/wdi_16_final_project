@@ -1,6 +1,6 @@
 angular 
 .module('finalproject')
-.factory('Petition', Petition)
+.factory('Petition', Petition);
 
 Petition.$inject = ['$resource', 'API']
 
