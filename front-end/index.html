@@ -23,7 +23,7 @@
 <body ng-controller="UsersController as us">
   <header>
     <nav>
-      <a href="#" ui-sref-active="active" ui-sref="home"><h1>finalProject</h1></a><ul><li ng-hide="us.checkLoggedIn()"><a href="#" ui-sref-active="active" ui-sref="login">Login</a></li><li ng-hide="us.checkLoggedIn()"><a href="#" ui-sref-active="active" ui-sref="register">Register</a></li><li ng-show="us.checkLoggedIn()"><a href="#" ui-sref-active="active" ui-sref="us">Users</a> </li><li ng-show="us.checkLoggedIn()"><a href="#" ui-sref="home" ng-click="us.logout()">Logout</a></li>
+      <a href="#" ui-sref-active="active" ui-sref="home"><h1>finalProject</h1></a><ul><li ng-hide="us.checkLoggedIn()"><a href="#" ui-sref-active="active" ui-sref="login">Login</a></li><li ng-hide="us.checkLoggedIn()"><a href="#" ui-sref-active="active" ui-sref="register">Register</a></li><li ng-show="us.checkLoggedIn()"><a href="#" ui-sref-active="active" ui-sref="petitions">Petitions</a></li><li ng-show="us.checkLoggedIn()"><a href="#" ui-sref="home" ng-click="us.logout()">Logout</a></li>
     </nav>
   </header>
 
