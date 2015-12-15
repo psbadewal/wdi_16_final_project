@@ -3,8 +3,8 @@ module.exports = function(petition_id, source, email, callback) {
   var serialize    = require("../helpers/serialize");
   var SHA256       = require("crypto-js/sha256");
 
-  var api_key      = CHANGE_API_KEY;
-  var secret_token = CHANGE_API_SECRET;
+  var api_key      = process.env.CHANGE_API_KEY;
+  var secret_token = process.env.CHANGE_API_SECRET;
   var host         = "https://api.change.org";
   var endpoint     = "/v1/petitions/"+petition_id+"/auth_keys";
   var request_url  = host + endpoint;

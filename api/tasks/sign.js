@@ -4,8 +4,8 @@ module.exports = function(){
   var rp          = require("request-promise"); 
   var getAuthKey  = require("./auth_key");
 
-  var api_key      = CHANGE_API_KEY;
-  var secret_token = CHANGE_API_SECRET;
+  var api_key      = process.env.CHANGE_API_KEY;
+  var secret_token = process.env.CHANGE_API_SECRET;
   var petition_id = 5128194;
   var email       = "psbadewal@outlook.com";
   var source      = "http://www.website.com/" + new Date();
