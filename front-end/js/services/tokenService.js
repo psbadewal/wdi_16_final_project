@@ -1,6 +1,6 @@
 angular
-.module('finalProject')
-.service('TokenService', TokenService);
+  .module('finalproject')
+  .service('TokenService', TokenService);
 
 TokenService.$inject = ['$window', 'jwtHelper'];
 function TokenService($window, jwtHelper) {
@@ -13,6 +13,10 @@ function TokenService($window, jwtHelper) {
 
   function setToken(token) {
     return $window.localStorage.setItem('auth-token', token);
+  }
+
+  function getToken() {
+    return $window.localStorage.getItem('auth-token');
   }
 
   function removeToken(){

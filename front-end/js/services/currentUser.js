@@ -1,6 +1,6 @@
 angular
-.module('finalProject')
-.service('CurrentUser', CurrentUser);
+  .module('finalproject')
+  .service('CurrentUser', CurrentUser);
 
 CurrentUser.$inject = ['TokenService']
 function CurrentUser(TokenService){

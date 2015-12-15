@@ -7,7 +7,7 @@ var bodyParser    = require('body-parser');
 var mongoose       = require('mongoose');
 var passport       = require('passport');
 var cookieParser   = require('cookie-parser');
-var methodOverride = require('methodOverride');
+var methodOverride = require('method-override');
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var app            = express();
@@ -15,7 +15,7 @@ var app            = express();
 //Requiring files 
 var config         = require('./config/config');
 var User           = require('./models/user');
-var secret         = require('.config/config').secret;
+var secret         = require('./config/config').secret;
 
 mongoose.connect(config.database);
 
@@ -50,7 +50,7 @@ app.use(function(err, req, res, next) {
   next();
 })
 
-var routes = require('.config/routes');
+var routes = require('./config/routes');
 app.use('/api', routes);
 
 app.listen(3000);

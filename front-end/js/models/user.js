@@ -1,9 +1,9 @@
 angular
-.module('finalProject')
-.factory('User', User)
+.module('finalproject')
+.factory('User', User);
 
 User.$inject = ['$resource', 'API']
-function User($resouce, API){
+function User($resource, API){
   return $resource(
     API + '/users/:id',
     {id: '@id'},
@@ -14,11 +14,12 @@ function User($resouce, API){
     'delete':  { method: 'DELETE' },
     'register':{ 
      url: API + '/register',
-     method: 'POST' },
-     'login':  { 
-       url: API + '/login',
-       method: 'POST'
-     },
-   }
-  );
+     method: 'POST'
+   },
+   'login':  { 
+     url: API + '/login',
+     method: 'POST'
+   },
+ }
+ );
 }

@@ -1,9 +1,10 @@
 angular
-.module('finalProject')
-.factory('authInterceptor', AuthInterceptor);
+  .module('finalproject')
+  .factory('authInterceptor', AuthInterceptor);
 
 AuthInterceptor.$inject = ['API', 'TokenService'];
 function AuthInterceptor(API, TokenService) {
+  
   return {
     request: function(config){
       var token = TokenService.getToken();
