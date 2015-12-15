@@ -15,22 +15,18 @@ function UsersController(User, TokenService, $state, CurrentUser){
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
 
-  // self.authenticate = function(provider) {
-  //   $auth.authenticate(provider);
-  // }
-
   function getUsers() {
-  User.query(function(data){
-    return self.all = data.users;
-    state.go('users');
-  });
-}
-
-function handleLogin(res) {
-  var token = res.token ? res.token : null;
-  if(token) {
-    self.getUsers();
+    User.query(function(data){
+      return self.all = data.users;
+      state.go('users');
+    });
   }
+
+  function handleLogin(res) {
+    var token = res.token ? res.token : null;
+    if(token) {
+      self.getUsers();
+    }
 //console.log(res)
 self.user = TokenService.decodeToken();
 CurrentUser.saveUser(self.user)

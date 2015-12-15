@@ -1,23 +1,24 @@
 angular
   .module('finalproject')
-  .controller('PetitionsController', petitionsController);
+  .controller('PetitionsController', PetitionsController);
 
-  PetitionsController.$inject = ['User', '$state', 'CurrentUser'];
-
-  function PetitionsController(Petition, $state, CurrentUser){
+  PetitionsController.$inject = ['Petition', '$state'];
+  function PetitionsController(Petition, $state){
 
     var self = this;
 
-    self.all = [];
+    self.all = Petition.query();
     self.petition = {};
-    self.getPetitions = getPetitions;
+    // self.getPetitions = getPetitions;
   
-  function getPetitions() {
-    Petition.query(function(data){
-      return self.all = data.petitions;
-      console.log(data.petitions);
-    });
+  // function getPetitions() {
+  //   console.log("ARRIVED")
+  //   Petition.query(function(data){
+  //     return self.all = data.petitions;
+  //   });
+  // }
 
-  }
-  return self.getPetitions();
+  // getPetitions();
+
+  return self
 }

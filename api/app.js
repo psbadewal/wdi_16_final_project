@@ -15,7 +15,9 @@ var app            = express();
 //Requiring files 
 var config         = require('./config/config');
 var User           = require('./models/user');
+var Petition       = require('./models/petition')
 var secret         = require('./config/config').secret;
+
 
 mongoose.connect(config.database);
 
@@ -56,5 +58,15 @@ app.use(function(err, req, res, next) {
 
 var routes = require('./config/routes');
 app.use('/api', routes);
+
+// Require scrapers
+var all  = require("./tasks/all");
+var sign = require("./tasks/sign");
+
+// Get everything from the url: https://www.change.org/petitions.json
+all();
+// sign();
+
+// get_id();
 
 app.listen(3000);
