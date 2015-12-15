@@ -11,11 +11,13 @@ angular
     self.all = [];
     self.petition = {};
     self.getPetitions = getPetitions;
-    self.checkLoggedIn = checkLoggedIn;
-  }
-
+  
   function getPetitions() {
     Petition.query(function(data){
       return self.all = data.petitions;
+      console.log(data.petitions);
     });
+
   }
+  return self.getPetitions();
+}
