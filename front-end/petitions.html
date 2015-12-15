@@ -1,3 +1,6 @@
 <h1>Petitions</h1>
-
-{{petitions.all}}
+<ul>
+  <li ng-repeat="petition in petitions.all">
+  {{ petition.local.title }}
+  </li>
+</ul>

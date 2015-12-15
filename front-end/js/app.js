@@ -26,9 +26,10 @@ angular
         url: "/profile",
         templateUrl: "profile.html"
       })
-      .state('users', {
-        url: "/users",
-        templateUrl: "users.html"
+      .state('petitions', {
+        url: "/petitions",
+        templateUrl: "petitions.html",
+        controller: "PetitionsController as petitions"
       })
 
     $urlRouterProvider.otherwise("/");
