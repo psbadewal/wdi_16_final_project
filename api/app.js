@@ -21,6 +21,10 @@ mongoose.connect(config.database);
 
 require('./config/passport')(passport);
 
+app.all("/auth", function(req, res){
+  console.log(req);
+})
+
 app.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     var method = req.body._method
