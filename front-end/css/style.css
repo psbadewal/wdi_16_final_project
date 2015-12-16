@@ -5,10 +5,12 @@
   float: left;
   overflow: hidden;
   margin-left: 15%;
-  display: inline-block;
+  display: inline block;
 }
 
 .card-text {
   max-width: 100%;
   max-height: 100%;
 }
+
+
