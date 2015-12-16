@@ -19,6 +19,5 @@ angular
   // }
 
   // getPetitions();
-
   return self
 }

@@ -1,6 +1,23 @@
 <h1>Petitions</h1>
-<ul>
-  <li ng-repeat="petition in petitions.all">
-  {{ petition.title }}
-  </li>
-</ul>
+<button class="like">Like</button>
+<button class="dislike">Dislike</button>
+
+<!-- <div class="card" ng-repeat="petition in petitions.all" ng-if="$index < 3">
+  <div class="title">
+    <strong>{{ petition.title }}</strong>
+    <p><a href="#">Read more</a></p>
+  </div>
+  <div card="content">
+    <strong>{{ petition.title }}</strong>
+    <p>{{ petition.description }}</p>
+  </div>
+</div> -->
+
+<div class="card" ng-repeat="petition in petitions.all" ng-if="$index < 3">
+  <img class="card-img-top" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">{{ petition.title }}</h4>
+    <p class="card-text">{{ petition.description }}</p>
+    <a href="#" class="btn btn-primary">Button</a>
+  </div>
+</div>

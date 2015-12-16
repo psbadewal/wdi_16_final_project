@@ -25,7 +25,7 @@ function UsersController(User, TokenService, $state, CurrentUser){
   function handleLogin(res) {
     var token = res.token ? res.token : null;
     if(token) {
-      self.getUsers();
+      // self.getUsers();
     }
 //console.log(res)
 self.user = TokenService.decodeToken();
@@ -55,7 +55,7 @@ function checkLoggedIn() {
 }
 
 if (CurrentUser.getUser()) {
-  self.getUsers();
+  // self.getUsers();
   //console.log(self.user);
 }
 
