@@ -17,6 +17,7 @@ function PetitionsController(Petition, $state){
     self.all.splice(index, 1);
     // console.log(self.all[0]);
     //save into an array of currentUsers's rejected petitions
+    //save into an array of currentUsers'
     if (isSigned) {
       alert('Thank you for signing')
       //do the signing logic here
