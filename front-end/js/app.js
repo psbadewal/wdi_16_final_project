@@ -34,12 +34,3 @@ angular
 
     $urlRouterProvider.otherwise("/");
   }
-
-  $(document).ready(function() {  
-     $(".card").swiperight(function() {  
-        $(".card").carousel('prev');  
-      });  
-     $(".card").swipeleft(function() {  
-        $("#myCarousel").carousel('next');  
-     });  
-  });  
