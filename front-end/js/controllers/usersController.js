@@ -30,19 +30,15 @@ function UsersController(User, TokenService, $state, CurrentUser){
     //console.log(res)
     self.user = TokenService.decodeToken();
     CurrentUser.saveUser(self.user)
+    $state.go('petitions');
   }
 
   function register() {
     User.register(self.user, handleLogin);
-    console.log("HERE!");
-    $state.go('register');
   }
 
   function login() {
     User.login(self.user, handleLogin);
-    console.log("HERE!");
-    $state.go('login');
-    console.log("After!");
   }
 
 function logout() {

@@ -1,0 +1,23 @@
+<section id="login" ng-hide="us.checkLoggedIn()">
+
+<form name="us.loginForm" ng-submit="us.login()" novalidate>
+<legend>Login</legend>
+
+<label for="email">Email</label>
+<input type="text" name="email" placeholder="Enter your email" ng-model="us.user.email" required>
+
+<div ng-messages="us.loginForm.$submitted && us.loginForm['email'].$invalid">
+  <p ng-message="required">Email is required</p>
+</div>
+
+  <label for="password">Password</label>
+  <input type="password" name="password" placeholder="Enter your password" ng-model="us.user.password" required>
+
+<!-- <div ng-messages="us.loginForm['password'].$error" ng-show="(us.loginForm.$submitted && us.loginForm['password'].$invalid"> -->
+<p ng-message="required">
+Password is required.</p>
+</div>
+
+<button type="submit">Login</button>
+</form>
+</section>
