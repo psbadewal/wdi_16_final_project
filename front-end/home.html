@@ -1,8 +1,12 @@
-<div ng-show="us.checkLoggedIn()">
-  <img src="./assets/images/lock.png">
-</div>
+<div class="scrollable">
+ <div class="scrollable-content section">
+    <div ng-show="us.checkLoggedIn()">
+      <img src="./assets/images/lock.png">
+    </div>
 
-<div ng-hide="us.checkLoggedIn()">
-  <img id="background" src="./assets/images/background.jpg"> 
-  <h1>Sign petitions. Be a change maker.</h1>
+    <div ng-hide="us.checkLoggedIn()">
+      <img id="background" src="./assets/images/background.jpg"> 
+      <h1>Sign petitions. Be a change maker.</h1>
+    </div>
+  </div>
 </div>

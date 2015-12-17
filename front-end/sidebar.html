@@ -1,0 +1,12 @@
+<div class="scrollable" ng-controller="UsersController as us">
+  <h1 class="scrollable-header app-name">Thumb <small>alpha</small></h1>  
+  <div class="scrollable-content">
+    <div class="list-group" ui-turn-off='uiSidebarLeft'>
+      <a class="list-group-item" href="#/">Home <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" ng-hide="us.checkLoggedIn()" href="#" ui-sref="login">Login <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" ng-hide="us.checkLoggedIn()" href="#" ui-sref="register">Register <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" ng-show="us.checkLoggedIn()" href="#" ui-sref="petitions">Petitions <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" ng-show="us.checkLoggedIn()" href="#" ng-click="us.logout()">Logout</a>
+    </div>
+  </div>
+</div>

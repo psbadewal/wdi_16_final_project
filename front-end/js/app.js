@@ -1,10 +1,18 @@
 angular
-  .module('finalproject', ['ngResource', 'angular-jwt', 'ui.router'])
+  .module('finalproject', ['ngResource', 'angular-jwt', 'ui.router', 'mobile-angular-ui', 'mobile-angular-ui.gestures'])
   .constant('API', 'http://localhost:3000/api')
   .config(MainRouter)
   .config(function($httpProvider){
     $httpProvider.interceptors.push('authInterceptor')
   });
+
+angular
+  .module('finalproject')
+  .run(function($rootScope){
+   $rootScope.$on('$stateChangeStart', function(){
+      $rootScope.$broadcast('$routeChangeSuccess');
+   });
+});
 
   MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -16,11 +24,13 @@ angular
       })
       .state('login', {
         url: "/login",
-        templateUrl: "login.html"
+        templateUrl: "login.html",
+        controller: "UsersController as us"
       })
       .state('register', {
         url: "/register",
-        templateUrl: "register.html"
+        templateUrl: "register.html",
+        controller: "UsersController as us"
       })
       .state('profile', {
         url: "/profile",

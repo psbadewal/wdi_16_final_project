@@ -18,7 +18,7 @@ function UsersController(User, TokenService, $state, CurrentUser){
   function getUsers() {
     User.query(function(data){
       return self.all = data.users;
-      state.go('users');
+      // $state.go('users');
     });
   }
 
@@ -27,20 +27,23 @@ function UsersController(User, TokenService, $state, CurrentUser){
     if(token) {
       // self.getUsers();
     }
-//console.log(res)
-self.user = TokenService.decodeToken();
-CurrentUser.saveUser(self.user)
-}
+    //console.log(res)
+    self.user = TokenService.decodeToken();
+    CurrentUser.saveUser(self.user)
+  }
 
-function register() {
-  User.register(self.user, handleLogin);
-  $state.go('register');
-}
+  function register() {
+    User.register(self.user, handleLogin);
+    console.log("HERE!");
+    $state.go('register');
+  }
 
-function login() {
-  User.login(self.user, handleLogin);
-  $state.go('login');
-}
+  function login() {
+    User.login(self.user, handleLogin);
+    console.log("HERE!");
+    $state.go('login');
+    console.log("After!");
+  }
 
 function logout() {
   TokenService.removeToken();

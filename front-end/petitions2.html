@@ -1,0 +1,14 @@
+<h1>Petitions</h1>
+
+<div class="cardContainer">
+<div class="card" ng-repeat="petition in petitions.all" ng-if="$index < 3">
+  <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/d/dc/Thomas_Tank_Engine_1.JPG" alt="Card image cap">
+  <div class="card-block">
+    <h6 class="card-title">{{ petition.title }}</h6>
+    <p class="card-text">{{ petition.description }}</p>
+    <a ng-click="petitions.nextPetition($index,false)" href="#"><img class="thumbs" src="./assets/images/thumbsdown.png"></a>
+    <a id="sign" ng-click="petitions.nextPetition($index,true)" href="#"><img class="thumbs" src="./assets/images/thumbsup.png"></a>
+  </div>
+</div>
+</div>
+
