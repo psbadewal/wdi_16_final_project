@@ -9,15 +9,20 @@ function PetitionsController(Petition, $state){
 
   self.all = Petition.query();
   self.petition = {};
+  self.signPetition = 
+  self.rejectPetition =
 
   self.nextPetition = function(index,isSigned) {
     // console.log(self.all[0]);
     self.all.splice(index, 1);
     // console.log(self.all[0]);
+    //save into an array of currentUsers's rejected petitions
     if (isSigned) {
+      alert('Thank you for signing')
       //do the signing logic here
       // 'Thanks for signing!'
       // 'Confirmation with the Database end'
+      //save into an array of currentUsers's signedPetitions
     }
 
   }
