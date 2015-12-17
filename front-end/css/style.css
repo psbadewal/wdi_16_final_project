@@ -1,6 +1,11 @@
+#background {
+  height: 100%;
+  width: 100%;
+}
+
 nav {
   height: 105px; 
-  background: #E0E0E0;
+  background: #F0F0F0;
 }
 
 .navbar-brand {
@@ -8,12 +13,11 @@ nav {
 }
 
 .nav navbar-nav {
-  background: #E0E0E0;
+  background: #F0F0F0;
 }
 
 .collapse {
-  background: #E0E0E0;
-  width: 103%;
+  background: #F0F0F0;
 }
 
 button, input, select, textarea {
@@ -27,7 +31,7 @@ ul li {
   display: block;
   margin-top: 0.5%;
   margin-right: 2%;
-  background: #E0E0E0;
+  background: #F0F0F0;
 }
 
 .cardContainer {
