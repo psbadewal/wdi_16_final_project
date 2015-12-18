@@ -18,7 +18,6 @@ var User           = require('./models/user');
 var Petition       = require('./models/petition')
 var secret         = require('./config/config').secret;
 
-
 mongoose.connect(config.database);
 
 require('./config/passport')(passport);
