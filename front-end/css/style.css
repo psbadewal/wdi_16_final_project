@@ -5,3 +5,43 @@
 .app-name {
   color: #007aff;
 }
+
+h3 {
+  font-size: 34px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.petition-description {
+  height: calc(100% - 62px);
+  overflow: scroll;
+}
+
+.petition-card {
+  border: 2px solid #057CFF;
+  padding: 30px 15px 15px 15px;
+  margin: 10px 0;
+  border-radius: 3px;
+  height: calc(100vh - 152px);
+  position: relative;
+}
+
+.scrollable-content {
+  overflow: hidden; 
+}
+
+.petition-buttons {
+  position: absolute;
+  bottom: 15px;
+  width: calc(100% - 30px);
+}
+
+.petition-buttons img {
+  height: 40px;
+}
+
+.petition-buttons a {
+  background-color: #555; 
+}
