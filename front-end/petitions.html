@@ -1,4 +1,4 @@
-<div class="scrollable">  
+<!-- <div class="scrollable">  
   <div class="scrollable-content section">
     <div class="list-group text-center">
       <div class="list-group-item list-group-item-home" ng-repeat="petition in petitions.all" ng-if="$index < 20">
@@ -15,4 +15,16 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<div id="carousel-example" class="carousel">
+      <div class="carousel-inner" ng-repeat="petition in petitions.all" ng-if="$index < 20">
+        <div href="" class="item active" carousel-example-item>
+          <div class="carousel-example-content">
+          <h3>{{ petition.title }}</h3>
+          <p>{{ petition.description | htmlToPlaintext }}</p>
+            <br/><small>Swipe me!</small>
+          </div>
+        </div>
+      </div>
 </div>
