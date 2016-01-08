@@ -5,11 +5,11 @@
  <div class="carousel">
    <div class="carousel-inner">
      <div class="carousel-item" 
-         style='background-image: url(/assets/images/1.jpg);'
+         style='background-image: url(/assets/images/card-bg.png);'
          ng-repeat="petition in petitions.all" 
          ng-if="$index < 20">
          <h3>{{ petition.title }}</h3>
-         <p>{{ petition.description | htmlToPlaintext }}</p>
+         <p>{{ petition.description | htmlToPlaintext | cut:true:300:' ...' }}</p>
           <small>Swipe me!</small>
      </div>
    </div>

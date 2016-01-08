@@ -48,7 +48,6 @@
               angle = sign * Math.min( ( Math.abs(Dx) / 700 ) * 30 , 30 );
           
           t.rotateZ = angle + (Math.round(t0.rotateZ));
-          
           return t;
         },
         move: function(drag){
