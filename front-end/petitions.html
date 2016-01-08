@@ -1,34 +1,3 @@
-<!-- <div class="scrollable">  
-  <div class="scrollable-content section">
-    <div class="list-group text-center">
-      <div class="list-group-item list-group-item-home" ng-repeat="petition in petitions.all" ng-if="$index < 20">
-        <div class="petition-card">
-          <div class="petition-description">
-            <h3 class="home-heading">{{ petition.title }}</h3>
-            <p>{{ petition.description | htmlToPlaintext }}</p>
-          </div>
-          <div class="btn-group justified nav-tabs petition-buttons">
-            <a ng-click="petitions.nextPetition($index,false)" class="btn btn-default"><img src="./assets/images/thumbsdown.png"></a>
-            <a ng-click="petitions.nextPetition($index,true)" class="btn btn-default"><img src="./assets/images/thumbsup.png"></a>
-          </div>  
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- <div id="carousel-example" class="carousel">
-  <div class="carousel-inner" ng-repeat="petition in petitions.all" ng-if="$index < 20">
-    <div href="" class="item active" carousel-example-item>
-      <div class="carousel-example-content">
-      <h3>{{ petition.title }}</h3>
-      <p>{{ petition.description | htmlToPlaintext }}</p>
-        <br/><small>Swipe me!</small>
-      </div>
-    </div>
-  </div>
-</div>-->
-
  <div ui-content-for="title">
    <span>Carousel with $drag</span>
  </div>
@@ -36,13 +5,12 @@
  <div class="carousel">
    <div class="carousel-inner">
      <div class="carousel-item" 
-         style='background-image: url(/assets/images/1.jpg);'>
-     </div>
-     <div class="carousel-item"
-          style='background-image: url(/assets/images/2.jpg);'>
-     </div>
-     <div class="carousel-item"
-          style='background-image: url(/assets/images/3.jpg);'>
+         style='background-image: url(/assets/images/1.jpg);'
+         ng-repeat="petition in petitions.all" 
+         ng-if="$index < 20">
+         <h3>{{ petition.title }}</h3>
+         <p>{{ petition.description | htmlToPlaintext }}</p>
+          <small>Swipe me!</small>
      </div>
    </div>
  </div>
