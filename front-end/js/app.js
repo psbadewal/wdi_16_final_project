@@ -1,5 +1,11 @@
 angular
-  .module('finalproject', ['ngResource', 'angular-jwt', 'ui.router', 'mobile-angular-ui', 'mobile-angular-ui.gestures'])
+  .module('finalproject', [
+    'ngResource', 
+    'angular-jwt', 
+    'ui.router', 
+    'mobile-angular-ui', 
+    'mobile-angular-ui.gestures'
+  ])
   .constant('API', 'http://localhost:3000/api')
   .config(MainRouter)
   .config(function($httpProvider){
@@ -13,6 +19,12 @@ angular
       $rootScope.$broadcast('$routeChangeSuccess');
    });
 });
+
+angular
+  .module('finalproject')
+  .run(function($transform) {
+    window.$transform = $transform;
+  })
 
   MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -44,3 +56,4 @@ angular
 
     $urlRouterProvider.otherwise("/");
   }
+
