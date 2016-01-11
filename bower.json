@@ -1,0 +1,26 @@
+{
+  "name": "Backit",
+  "description": "An app that allows you to browse and sign petitions with ease.",
+  "main": "app.js",
+  "authors": [
+    "psbadewal <psbadewal@icloud.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/psbadewal/wdi_16_final_project",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "~1.4.8",
+    "angular-jwt": "~0.0.9",
+    "mobile-angular-ui-ui-router": "~0.1.0",
+    "mobile-angular-ui": "~1.2.0-rc.3"
+  }
+}
