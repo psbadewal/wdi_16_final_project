@@ -15,15 +15,17 @@ router.route('/users')
 .get(usersController.usersIndex)
 
 router.route('/users/:id')
-.get(usersController.usersShow)
-.patch(usersController.usersUpdate)
-.delete(usersController.usersDelete)
+  .get(usersController.usersShow)
+  .patch(usersController.usersUpdate)
+  .delete(usersController.usersDelete)
 
 router.route('/petitions')
-.get(petitionsController.petitionsIndex)
+  .get(petitionsController.petitionsIndex)
 
 router.route('/petitions/:id')
-.get(petitionsController.petitionsShow)
+  .get(petitionsController.petitionsShow)
 
+router.route('/petitions/:id/sign')
+  .post(petitionsController.petitionsSign);
 
 module.exports = router;

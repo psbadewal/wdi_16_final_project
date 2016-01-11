@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css" />
   <link rel="stylesheet" href="./bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" type="text/css" href="./css/jTinder.css">
   
   <script src="./bower_components/angular/angular.min.js">
   </script>
@@ -25,7 +26,9 @@
   <script type="text/javascript" src="./js/models/petition.js"></script>
 
   <script type="text/javascript" src="./js/directives/carouselDirective.js"></script>
+  <script type="text/javascript" src="./js/directives/isLoadedDirective.js"></script>
   <script type="text/javascript" src="./js/directives/carouselItemDirective.js"></script>
+  <script type="text/javascript" src="./js/directives/jTinderDirective.js"></script>
 
   <script type="text/javascript" src="./js/filters/plainHtml.js"></script>
   <script type="text/javascript" src="./js/filters/limit.js"></script>
@@ -76,5 +79,12 @@
   </div><!-- ~ .app -->
 
   <div ui-yield-to="modals"></div>
+
+  <!-- jQuery lib -->
+  <script type="text/javascript" src="./js/vendor/jquery.min.js"></script>
+  <!-- transform2d lib -->
+  <script type="text/javascript" src="./js/vendor/jquery.transform2d.js"></script>
+  <!-- jTinder lib -->
+  <script type="text/javascript" src="./js/vendor/jquery.jTinder.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
- <div ui-content-for="title">
+<!--  <div ui-content-for="title">
    <span>Carousel with $drag</span>
  </div>
 
@@ -13,4 +13,12 @@
           <small>Swipe me!</small>
      </div>
    </div>
+ </div> -->
+
+ <div id="tinderslide" tinder>
+   <ul>
+      <li class="pane1" ng-repeat="petition in petitions.all" ng-if="$index < 20" is-loaded>
+        <div class="img"></div><div>Miami Beach</div><div class="like"></div><div class="dislike"></div>
+      </li>
+   </ul>
  </div>
