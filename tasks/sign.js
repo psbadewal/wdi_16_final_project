@@ -16,7 +16,6 @@ module.exports = function(petition_id, user){
   var country_code   = user.local.country_code;
   var source         = "http://www.website.com/" + new Date();
 
-// api_key, secret_token, email, first_name, last_name, address, city, state_province, postal_code, country_code, source
   getAuthKey(petition_id, source, email, function(response) {
     var my_petition_auth_key = JSON.parse(response).auth_key;
     var base_url             = "https://api.change.org";
@@ -60,5 +59,5 @@ module.exports = function(petition_id, user){
       console.log("Signing petition...");
       return console.log(res);
     });
-  // });
+  });
 }
