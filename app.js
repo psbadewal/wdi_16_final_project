@@ -65,12 +65,4 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + "/index.html");
 })
 
-// Require scrapers
-// var all  = require("./tasks/all");
-// var sign = require("./tasks/sign");
-
-// Get everything from the url: https://www.change.org/petitions.json
-// all();
-// sign();
-
 app.listen(port);
