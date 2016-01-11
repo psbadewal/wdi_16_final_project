@@ -8,9 +8,6 @@ var petitionsController = require('../controllers/petitionsController');
 router.post('/login', authenticationsController.login)
 router.post('/register', authenticationsController.register)
 
-// router.route('/')
-// .get(usersController.usersIndex)
-
 router.route('/users')
 .get(usersController.usersIndex)
 

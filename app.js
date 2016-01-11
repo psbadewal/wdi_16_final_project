@@ -3,7 +3,7 @@ var express        = require('express');
 var cors           = require('cors');
 var path           = require('path');
 var morgan         = require('morgan');
-var bodyParser    = require('body-parser');
+var bodyParser     = require('body-parser');
 var mongoose       = require('mongoose');
 var passport       = require('passport');
 var cookieParser   = require('cookie-parser');
@@ -11,6 +11,7 @@ var methodOverride = require('method-override');
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var app            = express();
+var port           = process.env.PORT || 3000;
 
 //Requiring files 
 var config         = require('./config/config');
@@ -39,12 +40,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(cors());
 app.use(passport.initialize());
+app.use(express.static(__dirname + "/public"));
 
 app.use('/api', expressJWT({ secret: secret })
   .unless({
     path: [
-    { url: '/api/login', methods: ['POST'] }, 
-    { url: '/api/register', methods: ['POST'] }
+      { url: '/api/login',    methods: ['POST'] }, 
+      { url: '/api/register', methods: ['POST'] },
+      { url: '/',             methods: ['GET']  }
     ]
   }));
 
@@ -58,14 +61,16 @@ app.use(function(err, req, res, next) {
 var routes = require('./config/routes');
 app.use('/api', routes);
 
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + "/index.html");
+})
+
 // Require scrapers
-var all  = require("./tasks/all");
-var sign = require("./tasks/sign");
+// var all  = require("./tasks/all");
+// var sign = require("./tasks/sign");
 
 // Get everything from the url: https://www.change.org/petitions.json
 // all();
 // sign();
 
-// get_id();
-
-app.listen(3000);
+app.listen(port);
