@@ -1,9 +1,26 @@
+body {
+  background:white;
+}
+
 .sidebar-left, .sidebar-right {
   background: #f5f5f5 !important;
 }
 
 .app-name {
   color: #007aff;
+  background: white;
+}
+
+.navbar-absolute-top {
+  background: white;
+}
+
+.scrollable-content {
+  background: white;
+}
+
+.btn-group.justified>.btn:last-child, .btn-group.justified>.btn.active {
+  background: white;
 }
 
 h3 {

@@ -1,4 +1,5 @@
 var Petition = require('../models/petition');
+var User     = require('../models/user');
 var sign     = require('../tasks/sign');
 
 function petitionsIndex(req, res){
@@ -26,8 +27,15 @@ function petitionsShow(req, res){
 }
 
 function petitionsSign(req, res) {
-  // What do we need to pass through to sign?!
-  sign();
+  var petition_id = req.params.id;
+  var user_id = req.body.user_id;
+
+  User.findById(user_id, function(err, user){
+    if (err) return res.status(500).send(err);
+
+    sign(petition_id, user);
+    return res.json({message: "Signed!" });
+  })
 }
 
 module.exports = {

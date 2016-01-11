@@ -1,4 +1,4 @@
-module.exports = function(){
+module.exports = function(petition_id, user){
   var serialize   = require("../helpers/serialize");
   var SHA256      = require("crypto-js/sha256");
   var rp          = require("request-promise"); 
@@ -6,10 +6,17 @@ module.exports = function(){
 
   var api_key      = process.env.CHANGE_API_KEY;
   var secret_token = process.env.CHANGE_API_SECRET;
-  var petition_id = 5128194;
-  var email       = "psbadewal@outlook.com";
-  var source      = "http://www.website.com/" + new Date();
+  var email        = user.local.email;
+  var first_name   = user.local.first_name; 
+  var last_name    = user.local.last_name; 
+  var address      = user.local.address;
+  var city         = user.local.city;
+  var state_province = user.local.state_province;
+  var postal_code    = user.local.postal_code;
+  var country_code   = user.local.country_code;
+  var source         = "http://www.website.com/" + new Date();
 
+// api_key, secret_token, email, first_name, last_name, address, city, state_province, postal_code, country_code, source
   getAuthKey(petition_id, source, email, function(response) {
     var my_petition_auth_key = JSON.parse(response).auth_key;
     var base_url             = "https://api.change.org";
@@ -24,13 +31,13 @@ module.exports = function(){
       endpoint: endpoint,
       source: source,
       email: email,
-      first_name: "Alex",
-      last_name: "Chin",
-      address: "68 Hanbury Street",
-      city: "London",
-      state_province: "London",
-      postal_code: "E1 5JL",
-      country_code: "US",
+      first_name: first_name,
+      last_name: last_name,
+      address: address,
+      city: city,
+      state_province: state_province,
+      postal_code: postal_code,
+      country_code: country_code,
     }
 
     // Build request signature.
@@ -53,5 +60,5 @@ module.exports = function(){
       console.log("Signing petition...");
       return console.log(res);
     });
-  });
+  // });
 }

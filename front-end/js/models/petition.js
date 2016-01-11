@@ -16,12 +16,12 @@ function Petition($resource, API){
 //Question - how do I pass in the parametres in the response string?
 
 
-Petition.$inject = ['$resource', 'API']
-function signPetition($resource, API){
-  return $resource(
-    API + '/petitions/:petition_id/signatures',
-    {petition_id: '@petition_id'},
-    { 'post':   { method: 'POST'}
-  }
-  );
-}
+// Petition.$inject = ['$resource', 'API']
+// function signPetition($resource, API){
+//   return $resource(
+//     API + '/petitions/:petition_id/signatures',
+//     {petition_id: '@petition_id'},
+//     { 'post':   { method: 'POST'}
+//   }
+//   );
+// }

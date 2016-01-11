@@ -2,8 +2,8 @@ angular
   .module('finalproject')
   .directive('tinder', Tinder);
 
-Tinder.$inject = ['$http'];
-function Tinder($http) {
+Tinder.$inject = ['$http', 'API', 'TokenService'];
+function Tinder($http, API, TokenService) {
   return {
     // Restrict it to be an attribute in this case
     restrict: 'A',
@@ -20,18 +20,25 @@ function Tinder($http) {
           },
           onLike: function (item) {
             $('#status').html('Like image ' + (item.index()+1));
+            var id = item.data("id");
+            var user_id = TokenService.decodeToken()._id;
 
-            // // Simple GET request example:
-            // $http({
-            //   method: 'POST',
-            //   url: '/petitions/' + + 
-            // }).then(function successCallback(response) {
-            //     // this callback will be called asynchronously
-            //     // when the response is available
-            //   }, function errorCallback(response) {
-            //     // called asynchronously if an error occurs
-            //     // or server returns response with an error status.
-            //   });
+            // Simple GET request example:
+            $http({
+              method: 'POST',
+              url: API + '/petitions/' + id + '/sign',
+              data: {
+                user_id: user_id
+              },
+            }).then(function successCallback(response) {
+              // this callback will be called asynchronously
+              // when the response is available
+              return console.log(response);
+            }, function errorCallback(response) {
+              // called asynchronously if an error occurs
+              // or server returns response with an error status.
+              return console.log(response);
+            });
           },
           animationRevertSpeed: 200,
           animationSpeed: 400,

@@ -1,24 +1,10 @@
-<!--  <div ui-content-for="title">
-   <span>Carousel with $drag</span>
- </div>
-
- <div class="carousel">
-   <div class="carousel-inner">
-     <div class="carousel-item" 
-         style='background-image: url(/assets/images/card-bg.png);'
-         ng-repeat="petition in petitions.all" 
-         ng-if="$index < 20">
-         <h3>{{ petition.title }}</h3>
-         <p>{{ petition.description | htmlToPlaintext | cut:true:300:' ...' }}</p>
-          <small>Swipe me!</small>
-     </div>
-   </div>
- </div> -->
-
- <div id="tinderslide" tinder>
+<div id="tinderslide" tinder>
    <ul>
-      <li class="pane1" ng-repeat="petition in petitions.all" ng-if="$index < 20" is-loaded>
-        <div class="img"></div><div>Miami Beach</div><div class="like"></div><div class="dislike"></div>
+      <li class="pane1" data-id="{{petition._id}}" ng-repeat="petition in petitions.all" ng-if="$index < 20" is-loaded>
+        <div class="petitionCard">
+          <h3>{{ petition.title }}</h3>
+          <p>{{ petition.description | htmlToPlaintext | cut:true:300:' ...' }}</p>
+        </div><div class="like"></div><div class="dislike"></div>
       </li>
    </ul>
  </div>
