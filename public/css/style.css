@@ -210,3 +210,11 @@ p {
 a.btn.btn-navbar {
     color: orangered;
 }
+
+a.btn.btn-navbar:hover {
+    color: orangered;
+}
+
+.btn-group.justified {
+    background: white;
+}
