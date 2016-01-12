@@ -206,3 +206,7 @@ p {
 .scrollable-content {
   overflow: scroll;
 }
+
+a.btn.btn-navbar {
+    color: orangered;
+}
