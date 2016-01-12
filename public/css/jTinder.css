@@ -3,11 +3,13 @@ html, body {
   padding: 0;
   margin: 0;
   position: relative;
+  font-family: 'Play', sans-serif;
 }
 
 body {
   overflow: hidden;
   background: white;
+  font-family: 'Play', sans-serif;
 }
 
 /* Wrapper with padding */
@@ -20,7 +22,7 @@ h3.ng-binding {
    padding: 4%;
        color: white;
        font-size: 30px;
-       background: #ff3b30;
+       background: orangered;
        margin: -1%;
 }
 
