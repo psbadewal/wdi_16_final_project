@@ -1,6 +1,6 @@
 <div id="tinderslide" tinder>
    <ul>
-      <li class="pane1" data-id="{{petition._id}}" ng-repeat="petition in petitions.all" ng-if="$index < 20" is-loaded>
+      <li class="pane1" data-id="{{petition._id}}" ng-repeat="petition in petitions.all" ng-if="$index < 40" is-loaded>
         <div class="petitionCard">
           <h3>{{ petition.title }}</h3>
           <p>{{ petition.description | htmlToPlaintext | cut:true:400:' ...' }}</p>
